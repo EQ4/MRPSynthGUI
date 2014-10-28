@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SubtractiveSynthVoiceViewController">
+            <connections>
+                <outlet property="adsrBox" destination="dRP-ix-gup" id="tpV-yL-9VJ"/>
+                <outlet property="amplitudeSlider" destination="f5t-Jn-dpW" id="ifb-ux-nMd"/>
+                <outlet property="attackSlider" destination="Pyy-IE-6wi" id="Vhj-6G-Pdg"/>
+                <outlet property="decaySlider" destination="7qD-TT-0a2" id="7N5-w1-DVk"/>
+                <outlet property="filterAdsrBox" destination="Yft-k9-07x" id="G4e-Wd-ZTE"/>
+                <outlet property="filterAttackSlider" destination="G6p-PJ-mS6" id="Kaz-iL-DFa"/>
+                <outlet property="filterBox" destination="FXb-ks-tov" id="ry0-fE-d9G"/>
+                <outlet property="filterCutoffSlider" destination="vDG-SK-Cnf" id="Eoe-vn-I1B"/>
+                <outlet property="filterDecaySlider" destination="zF8-OO-eOg" id="7Wn-ko-4je"/>
+                <outlet property="filterReleaseSlider" destination="Xed-V8-o5o" id="8Ds-rx-VXz"/>
+                <outlet property="filterResonanceSlider" destination="Ros-gT-pF4" id="b0b-vM-FUB"/>
+                <outlet property="filterSustainSlider" destination="8FB-iJ-FlL" id="B4d-Tx-Q1t"/>
+                <outlet property="filterTypeSelector" destination="cI2-fH-stz" id="Y07-0A-VXX"/>
+                <outlet property="harmonicsBox" destination="rK6-pr-wlO" id="Sad-Xq-OYt"/>
+                <outlet property="invertFilterEnvelopeCheckBox" destination="yMS-mY-mzf" id="622-bg-c9e"/>
+                <outlet property="parent" destination="SRE-js-deS" id="toF-Sv-4n8"/>
+                <outlet property="releaseSlider" destination="Cxa-yb-z93" id="u61-yN-U9P"/>
+                <outlet property="sustainSlider" destination="02i-TK-q2e" id="9K1-Az-Opk"/>
+                <outlet property="view" destination="afb-dG-RsO" id="Tcj-Cm-oPz"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="afb-dG-RsO">
+            <rect key="frame" x="0.0" y="0.0" width="628" height="535"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRE-js-deS">
+                    <rect key="frame" x="0.0" y="0.0" width="628" height="535"/>
+                    <subviews>
+                        <box autoresizesSubviews="NO" fixedFrame="YES" title="Amplitude Envelope" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="dRP-ix-gup">
+                            <rect key="frame" x="394" y="293" width="217" height="222"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="215" height="206"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pyy-IE-6wi">
+                                        <rect key="frame" x="28" y="23" width="21" height="150"/>
+                                        <sliderCell key="cell" continuous="YES" alignment="left" minValue="0.050000000000000003" maxValue="2" doubleValue="0.10000000000000001" tickMarkPosition="right" sliderType="linear" id="NJu-iT-ohK"/>
+                                        <connections>
+                                            <action selector="setAttack:" target="-2" id="Xf5-MZ-eGU"/>
+                                        </connections>
+                                    </slider>
+                                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7qD-TT-0a2">
+                                        <rect key="frame" x="73" y="23" width="21" height="150"/>
+                                        <sliderCell key="cell" continuous="YES" alignment="left" minValue="0.050000000000000003" maxValue="2" doubleValue="0.10000000000000001" tickMarkPosition="right" sliderType="linear" id="kag-D6-nCy"/>
+                                        <connections>
+                                            <action selector="setDecay:" target="-2" id="ZVA-L3-tvO"/>
+                                        </connections>
+                                    </slider>
+                                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="02i-TK-q2e">
+                                        <rect key="frame" x="118" y="23" width="21" height="150"/>
+                                        <sliderCell key="cell" continuous="YES" alignment="left" minValue="0.050000000000000003" maxValue="1" doubleValue="1" tickMarkPosition="right" sliderType="linear" id="OTt-Hv-QyH"/>
+                                        <connections>
+                                            <action selector="setSustain:" target="-2" id="a2m-dO-QuW"/>
+                                        </connections>
+                                    </slider>
+                                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxa-yb-z93">
+                                        <rect key="frame" x="165" y="23" width="21" height="150"/>
+                                        <sliderCell key="cell" continuous="YES" alignment="left" minValue="0.050000000000000003" maxValue="2" doubleValue="0.10000000000000001" tickMarkPosition="right" sliderType="linear" id="5Tz-Ln-f93"/>
+                                        <connections>
+                                            <action selector="setRelease:" target="-2" id="PxT-yc-EQ2"/>
+                                        </connections>
+                                    </slider>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SvH-tm-TDL">
+                                        <rect key="frame" x="16" y="179" width="45" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Attack" id="tLq-N6-BZG">
+                                            <font key="font" metaFont="cellTitle"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lYc-Mm-2jZ">
+                                        <rect key="frame" x="61" y="179" width="45" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Decay" id="YJI-Dh-xIf">
+                                            <font key="font" metaFont="cellTitle"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v03-JR-aua">
+                                        <rect key="frame" x="105" y="179" width="46" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sustain" id="rDr-aO-qne">
+                                            <font key="font" metaFont="cellTitle"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rPK-b6-zyz">
+                                        <rect key="frame" x="151" y="179" width="48" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Release" id="OLX-IB-VOU">
+                                            <font key="font" metaFont="cellTitle"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                            </view>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </box>
+                        <box autoresizesSubviews="NO" fixedFrame="YES" title="Harmonics" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="rK6-pr-wlO">
+                            <rect key="frame" x="17" y="293" width="375" height="222"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="373" height="206"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </box>
+                        <box autoresizesSubviews="NO" fixedFrame="YES" title="Filter" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="FXb-ks-tov">
+                            <rect key="frame" x="17" y="59" width="375" height="222"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="373" height="206"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDG-SK-Cnf" customClass="NSLogSlider">
+                                        <rect key="frame" x="39" y="20" width="21" height="150"/>
+                                        <sliderCell key="cell" continuous="YES" alignment="left" minValue="20" maxValue="16000" doubleValue="20" tickMarkPosition="right" sliderType="linear" id="Vtc-qn-dvb"/>
+                                        <connections>
+                                            <action selector="setFilterCutoff:" target="-2" id="CHo-eC-2b4"/>
+                                        </connections>
+                                    </slider>
+                                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ros-gT-pF4">
+                                        <rect key="frame" x="105" y="20" width="21" height="150"/>
+                                        <sliderCell key="cell" continuous="YES" alignment="left" minValue="0.050000000000000003" maxValue="2" doubleValue="0.10000000000000001" tickMarkPosition="right" sliderType="linear" id="Ng6-Ny-dgB"/>
+                                        <connections>
+                                            <action selector="setFilterResonance:" target="-2" id="0ci-KY-giN"/>
+                                        </connections>
+                                    </slider>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oSL-mF-6Qp">
+                                        <rect key="frame" x="29" y="171" width="44" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Cutoff" id="14F-NS-4D7">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C14-Bi-3lu">
+                                        <rect key="frame" x="80" y="171" width="71" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Resonance" id="r5B-K9-7gQ">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cI2-fH-stz">
+                                        <rect key="frame" x="208" y="54" width="135" height="24"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="Jbg-2x-t5O">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment label="LPF"/>
+                                                <segment label="HPF" selected="YES" tag="1"/>
+                                                <segment label="BPF"/>
+                                            </segments>
+                                        </segmentedCell>
+                                        <connections>
+                                            <action selector="setFilterType:" target="-2" id="vDx-t6-LZB"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yMS-mY-mzf">
+                                        <rect key="frame" x="223" y="122" width="119" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Invert Envelope" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="cyK-E6-tWM">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="setInvertFilterEnvelope:" target="-2" id="01q-to-6EX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </box>
+                        <box autoresizesSubviews="NO" fixedFrame="YES" title="Filter Envelope" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Yft-k9-07x">
+                            <rect key="frame" x="394" y="59" width="217" height="222"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="215" height="206"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6p-PJ-mS6">
+                                        <rect key="frame" x="28" y="23" width="21" height="150"/>
+                                        <sliderCell key="cell" continuous="YES" alignment="left" minValue="0.050000000000000003" maxValue="2" doubleValue="0.10000000000000001" tickMarkPosition="right" sliderType="linear" id="tjD-no-RD9"/>
+                                        <connections>
+                                            <action selector="setFilterAttack:" target="-2" id="m1k-T2-hLk"/>
+                                        </connections>
+                                    </slider>
+                                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zF8-OO-eOg">
+                                        <rect key="frame" x="73" y="23" width="21" height="150"/>
+                                        <sliderCell key="cell" continuous="YES" alignment="left" minValue="0.050000000000000003" maxValue="2" doubleValue="0.10000000000000001" tickMarkPosition="right" sliderType="linear" id="x4z-cG-OJx"/>
+                                        <connections>
+                                            <action selector="setFilterDecay:" target="-2" id="Z3p-Pl-690"/>
+                                        </connections>
+                                    </slider>
+                                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8FB-iJ-FlL">
+                                        <rect key="frame" x="118" y="23" width="21" height="150"/>
+                                        <sliderCell key="cell" continuous="YES" alignment="left" minValue="0.050000000000000003" maxValue="1" doubleValue="1" tickMarkPosition="right" sliderType="linear" id="yuN-Hm-lhR"/>
+                                        <connections>
+                                            <action selector="setFilterSustain:" target="-2" id="44p-Fh-577"/>
+                                        </connections>
+                                    </slider>
+                                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xed-V8-o5o">
+                                        <rect key="frame" x="165" y="23" width="21" height="150"/>
+                                        <sliderCell key="cell" continuous="YES" alignment="left" minValue="0.050000000000000003" maxValue="2" doubleValue="0.10000000000000001" tickMarkPosition="right" sliderType="linear" id="IJY-6X-8BS"/>
+                                        <connections>
+                                            <action selector="setFilterRelease:" target="-2" id="3eH-80-ncT"/>
+                                        </connections>
+                                    </slider>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GiI-qx-xyK">
+                                        <rect key="frame" x="16" y="179" width="45" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Attack" id="oTZ-DK-whW">
+                                            <font key="font" metaFont="cellTitle"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MOJ-1e-3mp">
+                                        <rect key="frame" x="61" y="179" width="45" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Decay" id="O1s-di-Otj">
+                                            <font key="font" metaFont="cellTitle"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kms-Lk-Bbl">
+                                        <rect key="frame" x="105" y="179" width="46" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sustain" id="FcY-hV-J32">
+                                            <font key="font" metaFont="cellTitle"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hd1-Ed-VBH">
+                                        <rect key="frame" x="151" y="179" width="48" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Release" id="jO5-rd-8wL">
+                                            <font key="font" metaFont="cellTitle"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                            </view>
+                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </box>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4QM-t6-8GM">
+                            <rect key="frame" x="18" y="38" width="81" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Output Gain" id="2HB-lP-v5b">
+                                <font key="font" metaFont="cellTitle"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                </customView>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f5t-Jn-dpW">
+                    <rect key="frame" x="18" y="18" width="592" height="21"/>
+                    <sliderCell key="cell" continuous="YES" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="wr6-Sw-e87"/>
+                    <connections>
+                        <action selector="setAmplitude:" target="-2" id="7CO-qX-Y2K"/>
+                    </connections>
+                </slider>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="SRE-js-deS" secondAttribute="centerX" id="1DQ-Tf-IEt"/>
+                <constraint firstAttribute="centerY" secondItem="SRE-js-deS" secondAttribute="centerY" id="LwM-24-Vkt"/>
+            </constraints>
+            <point key="canvasLocation" x="45" y="400.5"/>
+        </customView>
+    </objects>
+</document>
